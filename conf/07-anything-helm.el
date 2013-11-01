@@ -15,9 +15,7 @@
  ; 候補の最大表示数。初期値は50
  anything-candidate-number-limit 100
  ; 候補が多い時に体感速度を速くする
- anything-quick-update t
- ; 候補選択ショートカットキーをアルファベットに
- anything-enable-shortcuts 'alphabet)
+ anything-quick-update t)
 (require 'anything-config)
 ; root権限でアクションを実行するときのコマンド
 ; デフォルトは"su"
