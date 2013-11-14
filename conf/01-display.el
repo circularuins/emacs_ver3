@@ -134,8 +134,8 @@
 (require 'popup-select-window)
 ;; C-x oにpopup-select-windowをバインド
 (global-set-key "\C-xo" 'popup-select-window)
-;; ウィンドウが2つ以上存在する際にポップアップ表示する
-(setq popup-select-window-popup-windows 2)
+;; ウィンドウが3つ以上存在する際にポップアップ表示する
+(setq popup-select-window-popup-windows 3)
 ;; 選択中のウィンドウは、背景をオレンジにして目立たせる
 (setq popup-select-window-window-highlight-face '(:foreground "white" :background "yellow"))
 
