@@ -105,13 +105,13 @@
 
 (when window-system
   ; タイトルバーにファイル名を表示(GUIのみ)
-  (setq frame-title-format (format "%%f - emacs@%s" (system-name)))
-  ; ツールバーを非表示
-  (tool-bar-mode -1)
-  ; スクロールバーを非表示
-  (scroll-bar-mode -1)
-  ; メニューバーを非表示
-  (menu-bar-mode -1))
+  (setq frame-title-format (format "%%f - emacs@%s" (system-name))))
+; ツールバーを非表示
+(tool-bar-mode -1)
+; スクロールバーを非表示
+(scroll-bar-mode -1)
+; メニューバーを非表示
+(menu-bar-mode -1)
 
 ;;; #文字やツールバーの色 ;;;
 
