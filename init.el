@@ -76,7 +76,7 @@
 ; emacs --batch -Q -f batch-byte-compile auto-install.el
 (require 'auto-install)
 (setq auto-install-directory "~/.emacs.d/elisp/")
-(auto-install-update-emacswiki-package-name t)
+(ignore-errors (auto-install-update-emacswiki-package-name t))
 ; install-elisp との互換のため
 (auto-install-compatibility-setup)
 ; ediff関連のバッファを1つのフレームにまとめる
