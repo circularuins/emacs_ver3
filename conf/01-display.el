@@ -241,6 +241,7 @@ load
 (add-to-list 'ac-modes 'slime-repl-mode)
 (add-to-list 'ac-modes 'html-mode)
 (add-to-list 'ac-modes 'js2-mode)
+(add-to-list 'ac-modes 'scheme-mode)
 ;; ac-mode
 ;(autoload 'ac-mode "ac-mode" "Minor mode for advanced completion." t nil)
 

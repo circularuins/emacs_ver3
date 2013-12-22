@@ -278,6 +278,9 @@
 ;;; scheme(gauche) ;;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
+;; C-c C-lでバッファを評価
+;; 行末C-c C-e でS式を評価
+;; M-x run-scheme REPLを起動
 (setq quack-default-program "gosh")
 (require 'quack)
 (require 'scheme-complete)
