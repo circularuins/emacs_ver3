@@ -83,7 +83,7 @@
   (let ((pcomplete-help "complete after sudo"))
     (pcomplete-here (pcomplete-here (eshell-complete-commands-list)))))
 
-;; eshell での補完に auto-complete.el を使う
+;; ;; eshell での補完に auto-complete.el を使う
 ;; (require 'pcomplete)
 ;; (require 'auto-complete)
 ;; (add-to-list 'ac-modes 'eshell-mode)
@@ -105,8 +105,8 @@
    (declare (indent 1))
    `(eval-after-load ,name '(progn ,@body)))
  (defun eshell-disable-unix-command-emulation ()
-   (eval-after-load* "em-ls"
-     (fmakunbound 'eshell/ls))
+   ;; (eval-after-load* "em-ls"
+   ;;   (fmakunbound 'eshell/ls))
    (eval-after-load* "em-unix"
      (mapc 'fmakunbound '(eshell/agrep
                           eshell/basename
