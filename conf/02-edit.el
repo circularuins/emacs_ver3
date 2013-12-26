@@ -5,7 +5,8 @@
 ;;; #削除系コマンド ;;;
 
 ;; C-hで直前の文字を消去
-(global-set-key (kbd "C-h") 'delete-backward-char)
+;(global-set-key (kbd "C-h") 'delete-backward-char)
+(keyboard-translate ?\C-h ?\C-?)
 
 ;; C-x C-hでhelp
 (global-set-key (kbd "C-x C-h") 'help)
