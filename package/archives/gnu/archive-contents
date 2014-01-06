@@ -16,7 +16,7 @@
 		 ((:url . "http://elpa.gnu.org/packages/adaptive-wrap.html")
 		  (:keywords))])
  (adjust-parens .
-		[(2 0)
+		[(3 0)
 		 nil "Indent and dedent Lisp code, automatically adjust close parens" tar
 		 ((:url . "http://elpa.gnu.org/packages/adjust-parens.html"))])
  (all .
@@ -112,6 +112,11 @@
 			 nil "Parse and browse f90 interfaces" single
 			 ((:url . "http://github.com/wence-/f90-iface/")
 			  (:keywords))])
+ (flylisp .
+	  [(0 2)
+	   nil "Color unbalanced parentheses and parentheses inconsistent with indentation" single
+	   ((:url . "http://elpa.gnu.org/packages/flylisp.html")
+	    (:keywords))])
  (ggtags .
 	 [(0 7 8)
 	  ((emacs
@@ -186,7 +191,7 @@
 	      ((:url . "http://elpa.gnu.org/packages/nhexl-mode.html")
 	       (:keywords "data"))])
  (nlinum .
-	 [(1 1)
+	 [(1 2)
 	  nil "Show line numbers in the margin" single
 	  ((:url . "http://elpa.gnu.org/packages/nlinum.html")
 	   (:keywords "convenience"))])
@@ -210,7 +215,7 @@
 	    ((:url . "http://elpa.gnu.org/packages/omn-mode.html")
 	     (:keywords))])
  (org .
-      [(20131223)
+      [(20140104)
        nil "Outline-based notes management and organizer" tar nil])
  (quarter-plane .
 		[(0 1)
@@ -282,7 +287,7 @@
 	((:url . "http://www.dr-qubit.org/emacs.php")
 	 (:keywords "extensions" "matching" "data structures"))])
  (undo-tree .
-	    [(0 6 3)
+	    [(0 6 5)
 	     nil "Treat undo history as a tree" single
 	     ((:url . "http://www.dr-qubit.org/emacs.php")
 	      (:keywords "convenience" "files" "undo" "redo" "history" "tree"))])
@@ -311,7 +316,9 @@
 	       (:keywords "window"))])
  (wisi .
        [(1 0)
-	nil "Utilities for implementing an indentation/navigation engine using a generalized LALR parser" tar
+	((cl-lib
+	  (0)))
+	"Utilities for implementing an indentation/navigation engine using a generalized LALR parser" tar
 	((:url . "http://stephe-leake.org/emacs/ada-mode/emacs-ada-mode.html"))])
  (xclip .
 	[(1 3)

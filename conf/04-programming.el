@@ -156,6 +156,32 @@
 
 
 
+;;;;;;;;;;;;
+;;; Ruby ;;;
+;;;;;;;;;;;;
+
+(autoload 'ruby-mode "ruby-mode"
+  "Mode for editing ruby source files" t)
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+
+;; 括弧の自動挿入
+(require 'ruby-electric nil t)
+;; endに対応する行のハイライト
+(when (require 'ruby-block nil t)
+  (setq ruby-block-highlight-toggle t))
+
+;; ruby-mode-hook用の関数
+(defun ruby-mode-hooks ()
+  (ruby-electric-mode t)
+  (ruby-block-mode t))
+(add-hook 'ruby-mode-hook 'ruby-mode-hooks)
+
+
+
+
+
 ;;;;;;;;;;;;;;;;;;
 ;;; javascript ;;;
 ;;;;;;;;;;;;;;;;;;
