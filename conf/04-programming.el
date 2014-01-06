@@ -166,6 +166,13 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
+;; ruby-insert-endがないよっっていうエラーへの対応
+(defun ruby-insert-end ()
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
+
 ;; 括弧の自動挿入
 (require 'ruby-electric nil t)
 ;; endに対応する行のハイライト
