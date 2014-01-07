@@ -93,6 +93,10 @@
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow"))))))
 
+;; flycheck(flymakeの簡易版)
+;; Ruby
+(add-hook 'ruby-mode-hook 'flycheck-mode)
+
 
 
 
