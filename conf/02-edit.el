@@ -65,6 +65,10 @@
 (require 'sequential-command-config)
 (sequential-command-setup-keys)
 
+;; 連続して操作する際のprefixキー入力をキャンセルさせる
+;; http://sheephead.homelinux.org/2011/12/19/6930/
+(require 'smartrep)
+
 ;;; #表示 ;;;
 
 ;; 相対的なカーソル位置を保ったまま画面スクロール
