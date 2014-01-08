@@ -118,14 +118,17 @@
 ;; color-themeの設定
 ; wget https://gnuemacscolorthemetest.googlecode.com/files/color-theme-6.6.0-mav.zip
 ; unzipしたフォルダごと、elisp/に置く
-(require 'color-theme)
-(color-theme-initialize)
-;;(color-theme-arjen)
-;;(color-theme-euphoria)(
-(color-theme-clarity)
-;; color-theme-solorized.elを使う
-;; (when (require 'color-theme-solarized)
-;;   (color-theme-solarized-light))
+; GUIでは、自作テーマを仕様
+(cond ((window-system)
+       (setq custom-theme-directory "~/.emacs.d/themes/")
+       (load-theme 'molokai t))
+      (t
+       (require 'color-theme)
+       (color-theme-initialize)
+       (color-theme-arjen)
+;       (color-theme-euphoria)
+;       (color-theme-clarity)
+       ))
 
 ;;; 開いているウィンドウ一覧をポップアップ表示する
 ;;; C-n/C-pや英字キーで選択する
