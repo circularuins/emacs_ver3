@@ -2,6 +2,10 @@
 ;;; 全般 ;;;
 ;;;;;;;;;;;;
 
+;; yasnippetの設定
+(require 'yasnippet)
+(yas-global-mode 1)
+
 ;; 実行権限の自動付与
 ;; ファイルが #! から始まる場合、+X を付けて保存する
 (add-hook 'after-save-hook
@@ -252,6 +256,8 @@
 (add-hook 'inferior-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'scheme-mode-hook 'enable-paredit-mode)
 (add-hook 'inferior-scheme-mode-hook 'enable-paredit-mode)
+(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-hook 'nrepl-mode-hook 'enable-paredit-mode)
 (global-set-key (kbd "C-c f") 'paredit-forward-slurp-sexp) ; 右のS式を飲み込む
 (global-set-key (kbd "C-c b") 'paredit-forward-barf-sexp) ; S式を右に吐き出す
 (global-set-key (kbd "C-c u") 'paredit-splice-sexp-killing-backward) ; カーソル前の要素と外側の()を消す
@@ -343,6 +349,30 @@
     (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
     (eldoc-mode)))
 (setq lisp-indent-function 'scheme-smart-indent-function)
+
+
+
+
+
+;;;;;;;;;;;;;;;
+;;; Clojure ;;;
+;;;;;;;;;;;;;;;
+
+;; nrepl.el後継のCIDER
+(require 'cider)
+;; ミニバッファに関数の引数を表示
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+
+;; ciderのreplでauto-completeが使えるようにする
+(require 'ac-nrepl)
+(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'cider-repl-mode))
+ 
+;; clojure用のyasnippet
+(require 'clojure-snippets)
+(clojure-snippets-initialize)
 
 
 
