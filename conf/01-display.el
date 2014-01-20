@@ -246,6 +246,8 @@ load
 (add-to-list 'ac-modes 'js2-mode)
 (add-to-list 'ac-modes 'scheme-mode)
 (add-to-list 'ac-modes 'inferior-scheme-mode)
+(add-to-list 'ac-modes 'inferior-lisp-mode)
+(add-to-list 'ac-modes 'clojure-mode)
 ;; ac-mode
 ;(autoload 'ac-mode "ac-mode" "Minor mode for advanced completion." t nil)
 
