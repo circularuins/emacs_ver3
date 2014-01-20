@@ -259,6 +259,7 @@
 (add-hook 'inferior-scheme-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 (add-hook 'nrepl-mode-hook 'enable-paredit-mode)
+(add-hook 'cider-repl-mode-hook 'enable-paredit-mode)
 (global-set-key (kbd "C-c f") 'paredit-forward-slurp-sexp) ; 右のS式を飲み込む
 (global-set-key (kbd "C-c b") 'paredit-forward-barf-sexp) ; S式を右に吐き出す
 (global-set-key (kbd "C-c u") 'paredit-splice-sexp-killing-backward) ; カーソル前の要素と外側の()を消す
