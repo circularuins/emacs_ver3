@@ -18,7 +18,7 @@
 
 ;;; zo～～ne
 (require 'zone)
-(zone-when-idle 300)
+;(zone-when-idle 300)
 
 (defun zone-choose (pgm)
     "Choose a PGM to run for `zone'."
