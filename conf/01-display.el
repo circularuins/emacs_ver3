@@ -133,14 +133,14 @@
 ;;; 開いているウィンドウ一覧をポップアップ表示する
 ;;; C-n/C-pや英字キーで選択する
 
-; M-x install-elisp-from-emacswiki popup-select-window.el
-(require 'popup-select-window)
-;; C-x oにpopup-select-windowをバインド
-(global-set-key "\C-xo" 'popup-select-window)
-;; ウィンドウが3つ以上存在する際にポップアップ表示する
-(setq popup-select-window-popup-windows 3)
-;; 選択中のウィンドウは、背景をオレンジにして目立たせる
-(setq popup-select-window-window-highlight-face '(:foreground "white" :background "yellow"))
+;; ; M-x install-elisp-from-emacswiki popup-select-window.el
+;; (require 'popup-select-window)
+;; ;; C-x oにpopup-select-windowをバインド
+;; (global-set-key "\C-xo" 'popup-select-window)
+;; ;; ウィンドウが3つ以上存在する際にポップアップ表示する
+;; (setq popup-select-window-popup-windows 3)
+;; ;; 選択中のウィンドウは、背景をオレンジにして目立たせる
+;; (setq popup-select-window-window-highlight-face '(:foreground "white" :background "yellow"))
 
 ;;; 分割したウィンドウの大きさをインタラクティブに変更する
 
