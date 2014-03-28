@@ -42,6 +42,9 @@
 ;;; キーストロークをエコーエリアに早く表示する
 (setq echo-keystrokes 0.1)
 
+;;; バッファ自動再読み込み
+(global-auto-revert-mode 1)
+
 
 
 
@@ -135,19 +138,13 @@
 
 ;; ; M-x install-elisp-from-emacswiki popup-select-window.el
 ;; (require 'popup-select-window)
-;; ;; C-x oにpopup-select-windowをバインド
-;; (global-set-key "\C-xo" 'popup-select-window)
 ;; ;; ウィンドウが3つ以上存在する際にポップアップ表示する
 ;; (setq popup-select-window-popup-windows 3)
 ;; ;; 選択中のウィンドウは、背景をオレンジにして目立たせる
 ;; (setq popup-select-window-window-highlight-face '(:foreground "white" :background "yellow"))
 
 ;;; 分割したウィンドウの大きさをインタラクティブに変更する
-
 ;; http://d.hatena.ne.jp/khiker/20100119/window_resize
-;; C-c C-rで変更開始
-;; hjklでサイズ変更
-
 (defun my-window-resizer ()
   "Control window size and position."
   (interactive)
@@ -183,7 +180,6 @@
                (message "Quit")
                (throw 'end-flag t)))))))
 
-(global-set-key "\C-c\C-r" 'my-window-resizer)
 
 
 
@@ -301,9 +297,6 @@ load
 
 ;;; #選択 ;;;
 
-;; バッファ一覧をまともに
-(global-set-key "\C-x\C-b" 'bs-show)
-
 ;; iswitchb(バッファ切り替え時のインクリメンタル補完)
 (iswitchb-mode 1)
 (add-hook 'iswitchb-define-mode-map-hook
@@ -330,62 +323,6 @@ load
 (define-key ctl-x-map "S" 'save-current-configuration)    ; C-x S で状態保存
 (define-key ctl-x-map "F" 'resume)                        ; C-x F で復元
 (add-hook 'kill-emacs-hook 'save-current-configuration)   ; 終了時に状態保存
-
-;;; #タブ表示 ;;;
-
-;; ;; バッファ一覧をタブで表示
-;; ; install-elisp-from-emacswiki tabbar.el
-;; (require 'tabbar)
-;; (global-set-key [f4] 'tabbar-mode) ; F4 で tabbar-mode
-;; ; グループ化せずに*scratch*以外のタブを表示
-;; (require 'cl)
-;;  (when (require 'tabbar nil t)
-;;     (setq tabbar-buffer-groups-function
-;;             (lambda (b) (list "All Buffers")))
-;;     (setq tabbar-buffer-list-function
-;;           (lambda ()
-;;             (remove-if
-;;              (lambda(buffer)
-;;                (find (aref (buffer-name buffer) 0) " *"))
-;;              (buffer-list))))
-;;     (tabbar-mode))
-;; ; 左に表示されるボタンを無効化
-;; (setq tabbar-home-button-enabled "")
-;; (setq tabbar-scroll-left-button-enabled "")
-;; (setq tabbar-scroll-right-button-enabled "")
-;; (setq tabbar-scroll-left-button-disabled "")
-;; (setq tabbar-scroll-right-button-disabled "")
-;; ; 色設定
-;;  (set-face-attribute
-;;    'tabbar-default-face nil
-;;    :background "gray90") ;バー自体の色
-;;   (set-face-attribute ;非アクティブなタブ
-;;    'tabbar-unselected-face nil
-;;    :background "gray90"
-;;    :foreground "black"
-;;    :box nil)
-;;   (set-face-attribute ;アクティブなタブ
-;;    'tabbar-selected-face nil
-;;    :background "black"
-;;    :foreground "white"
-;;    :box nil)
-;; ; 幅設定
-;;   (set-face-attribute
-;;    'tabbar-separator-face nil
-;;    :height 0.7)
-;; ; キーバインド
-;; (define-key global-map (kbd "<right>") 'tabbar-forward)
-;; (define-key global-map (kbd "<left>") 'tabbar-backward)
-;; ; 特定のファイルをタブに表示しない
-;; (setq my-tabbar-x-list
-;;       (rx " *"
-;;           "Map_Sym.txt"
-;;           ".ipa"))
-;; (defun my-tabbar-buffer-list ()
-;;   (remove-if
-;;     (lambda (buffer) (find (aref (buffer-name buffer) 0) my-tabbar-x-list))
-;;     (buffer-list)))
-;; (setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
 
 
 
@@ -432,7 +369,6 @@ load
 ;; 作者のページ：http://d.hatena.ne.jp/kiwanami/20100528/1275038929
 ;; "M-+"で開始、"C-c ; Q"で終了
 (require 'e2wm)
-(global-set-key (kbd "M-+") 'e2wm:start-management)
 (e2wm:add-keymap 
  e2wm:pst-minor-mode-keymap
  '(("<M-left>" . e2wm:dp-code ) ; codeへ変更
@@ -452,10 +388,5 @@ load
 (defun e2wm:my-toggle-sub () ; Subをトグルする関数
   (interactive)
   (e2wm:pst-window-toggle 'sub t 'main))
-; 矢印キーでウィンドウ移動
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
-(global-set-key (kbd "C-c <left>")  'windmove-left)
-    (global-set-key (kbd "C-c <right>") 'windmove-right)
-    (global-set-key (kbd "C-c <up>")    'windmove-up)
-    (global-set-key (kbd "C-c <down>")  'windmove-down)

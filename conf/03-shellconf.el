@@ -62,7 +62,6 @@
 ;               (define-key eshell-mode-map [(meta return)] (select-toggle-fullscreen))
                )
              ))
-(define-key global-map (kbd "C-z") 'eshell)
 
 ;; エスケープシーケンスを処理
 ;; http://d.hatena.ne.jp/hiboma/20061031/1162277851

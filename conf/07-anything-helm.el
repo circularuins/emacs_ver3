@@ -20,13 +20,6 @@
 ; root権限でアクションを実行するときのコマンド
 ; デフォルトは"su"
 (setq anything-su-or-sudo "sudo")
-; M-xでanything起動
-(define-key global-map (kbd "M-x")
-  (lambda ()
-    (interactive)
-    (anything-other-buffer
-     '(anything-c-source-extended-command-history anything-c-source-emacs-commands)
-     "*anything emacs commands*")))
 ; 履歴にデフォルト表示させるコマンド
 (setq extended-command-history
      '( "anything-for-files" "perltidy-region" "eval-region" "eval-buffer"))
@@ -40,9 +33,6 @@
 ;; describe-bindingsをAnythingに置き換える
 (when (require 'descbinds-anything nil t)
   (descbinds-anything-install))
-
-;; M-yにanything-show-kill-ringを割り当てる
-(define-key global-map (kbd "M-y") 'anything-show-kill-ring)
 
 ;; anythingフレームワークでフォントを確認する
 (require 'cl)  ; loop, delete-duplicates

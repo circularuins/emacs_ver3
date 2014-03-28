@@ -1,4 +1,5 @@
 ;;; recentf-ext.el --- Recentf extensions
+;; Version: 20130130.2150
 
 ;; $Id: recentf-ext.el,v 1.4 2013/01/30 21:47:11 rubikitch Exp $
 
