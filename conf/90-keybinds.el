@@ -29,7 +29,7 @@
 ;;; ファイル
 (define-key global-map (kbd "C-x C-m") 'recentf-open-files)
 
-;;; 矩形編集
+;;; cua-mode
 ;; C-RETで開始、C-gで終了
 ;; #連番入力の手順
 ;; 矩形選択後、M-oでスペース1文字挿入
